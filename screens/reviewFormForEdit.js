@@ -7,15 +7,12 @@ import FlatButton from '../shared/button.js';
 
 const reviewSchema = yup.object({
   Name: yup.string()
-    .required()
-    .min(5),
+    .required(),
   Email: yup.string()
     .required()
-    .min(8)
     .email(),
   DName: yup.string()
-    .required()
-    .min(8),
+    .required(),
   Mobile: yup.string()
     .required()
     .max(10)

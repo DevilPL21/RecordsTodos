@@ -10,6 +10,7 @@ import ReviewFormForEdit from './reviewFormForEdit';
 import FlatButton from '../shared/button.js';
 import { deleteRecord, updateRecord, addRecord, clearRecord } from '../redux/recordActions';
 import { useDispatch, useSelector } from 'react-redux';
+import SearchComponent from './SearchComponent';
 
 export default function Home({ navigation }) {
   const [modalOpen, setModalOpen] = useState(false);
@@ -122,6 +123,8 @@ export default function Home({ navigation }) {
         style={styles.modalToggle}
         onPress={() => setModalOpen(true)} 
       />
+
+      <SearchComponent records={records} />
 
       <FlatList ListEmptyComponent={EmptyListMessage} data={records} keyExtractor={(item) => item?.key} renderItem={({ item }) => (
         <TouchableOpacity key={item.key} onPress={() => navigation.navigate('RecordDetails', item)}>

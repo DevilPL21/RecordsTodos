@@ -1,4 +1,4 @@
-import { ADD_RECORD, DELETE_RECORD, UPDATE_RECORD, CLEAR_RECORD, INITIAL_RECORDS } from './recordActions';
+import { ADD_RECORD, DELETE_RECORD, UPDATE_RECORD, CLEAR_RECORD, INITIAL_RECORDS, SEARCH_RECORDS } from './recordActions';
 
 const initialState = {
   records: [],
@@ -30,6 +30,10 @@ const recordReducer = (state = initialState, action) => {
         records: [],
       };
     case INITIAL_RECORDS:
+      return {
+        records: action.payload,
+      };
+    case SEARCH_RECORDS:
       return {
         records: action.payload,
       };
